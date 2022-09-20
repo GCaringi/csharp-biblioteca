@@ -16,3 +16,17 @@ Console.WriteLine(doc.Genre);
 Console.WriteLine(doc.Position);
 Console.WriteLine($"{doc.Author.Name} {doc.Author.Surname}");
 
+Library lib = new Library("La Libreria");
+Console.WriteLine();
+
+
+Console.WriteLine(lib.Name);
+
+Console.WriteLine();
+
+lib.allCatalog();
+
+lib.AddDvd("Fuga da marte", 2014, "Horror", "1A", "Tom", "Holland", 123, "3256343");
+
+Console.WriteLine();
+lib.allCatalog();
