@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,10 +11,6 @@ namespace csharp_biblioteca
     {
         public string Name { get; }
 
-        private List<Book> _books;
-
-        private List<Dvd> _dvds;
-
         private List<Users> _users;
 
         private List<Document> _documents;
@@ -21,8 +18,6 @@ namespace csharp_biblioteca
         public Library(string name)
         {
             Name = name;
-            _books = new List<Book>();
-            _dvds = new List<Dvd>();
             _users = new List<Users>();
             _documents = new List<Document>();
         }
@@ -51,6 +46,19 @@ namespace csharp_biblioteca
         public void RegisterUser(Users user)
         {
             _users.Add(user);
+        }
+
+        public Document searchByCode(int code)
+        {
+            foreach(Document doc in _documents)
+            {
+                if (doc.Code == code)
+                {
+                    return doc;
+                }
+            }
+
+            return null;
         }
 
     }

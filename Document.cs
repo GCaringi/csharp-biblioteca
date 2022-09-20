@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace csharp_biblioteca
 {
     public class Document
-    {
+    { 
+        public int Code { get; set; }
         public string? Title { get; set; }
         public int Year { get; }
         public string Genre { get; set; }
@@ -15,8 +16,9 @@ namespace csharp_biblioteca
         public string Position { get; set; }
         public Person Author { get; set; }
 
-        protected Document(string title, int year, string genre, string position, string author_name, string author_surname)
+        protected Document(int code, string title, int year, string genre, string position, string author_name, string author_surname)
         {
+            Code = code;
             Title = title;
             Year = year;
             Genre = genre;
@@ -24,6 +26,7 @@ namespace csharp_biblioteca
             Position = position;
             Author = new Person(author_name, author_surname);
         }
+
     }
 
    
