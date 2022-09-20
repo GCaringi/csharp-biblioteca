@@ -61,6 +61,18 @@ namespace csharp_biblioteca
             return null;
         }
 
+        public List<Document> searchByName(string name)
+        {
+            List<Document> result = new List<Document>();
+            foreach (Document document in _documents)
+            {
+                if (document.Title.Contains(name){
+                    result.Add(document);
+                }
+            }
+            return result; 
+        }
+
     }
 
     
