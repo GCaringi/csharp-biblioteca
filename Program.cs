@@ -24,9 +24,6 @@ Console.WriteLine(lib.Name);
 
 Console.WriteLine();
 
-lib.allCatalog();
-
-lib.AddDvd("Fuga da marte", 2014, "Horror", "1A", "Tom", "Holland", 123, "3256343");
-
+lib.AddDocument(new Dvd("Fuga da marea", 2014, "Horror", "1A", "Tom", "Holland", 123, 3256343));
 Console.WriteLine();
-lib.allCatalog();
+lib.allDoc();

@@ -16,56 +16,41 @@ namespace csharp_biblioteca
 
         private List<Users> _users;
 
+        private List<Document> _documents;
+
         public Library(string name)
         {
             Name = name;
             _books = new List<Book>();
             _dvds = new List<Dvd>();
             _users = new List<Users>();
+            _documents = new List<Document>();
         }
 
-        public void allCatalog()
+        public void allDoc()
         {
-            if (_books.Count == 0)
+            if (_documents.Count() == 0)
             {
-                Console.WriteLine("Non sono presenti libri");
+                Console.WriteLine("Non c'è nulla nella libreria");
             }
             else
             {
-                Console.WriteLine("Lista Libri");
-                foreach (Book book in _books)
+                Console.WriteLine("Lista dei Documenti");
+                foreach (Document doc in _documents)
                 {
-                    Console.WriteLine($"{book.Title}");
-                }
-            }
-            if (_dvds.Count == 0)
-            {
-                Console.WriteLine("Non sono presenti dvd");
-
-            }
-            else
-            {
-                Console.WriteLine("Lista DVD");
-                foreach(Dvd dvd in _dvds)
-                {
-                    Console.WriteLine($"{dvd.Title}");
+                    Console.WriteLine(doc.Title);
                 }
             }
         }
 
-        public void AddBook(string title, int year, string genre, string position, string author_name, string author_surname, int isbn, int pages)
+        public void AddDocument(Document doc)
         {
-            _books.Add(new Book(title, year, genre, position, author_name, author_surname, isbn, pages));
+            _documents.Add(doc);
         }
 
-        public void AddDvd(string title, int year, string genre, string position, string author_name, string author_surname, int duration, int serial)
+        public void RegisterUser(Users user)
         {
-            _dvds.Add(new Dvd(title, year, genre, position, author_name, author_surname, serial, duration));
-        }
-
-        public void RegisterUser(string name, string surname, string email, string password, string phoneNumber)
-        {
-            _users.Add(new Users(name, surname, email, password, phoneNumber));
+            _users.Add(user);
         }
 
     }
